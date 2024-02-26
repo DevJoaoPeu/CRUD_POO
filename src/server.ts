@@ -17,4 +17,8 @@ class App {
   routes() {
     this.express.use()
   }
+
+  listen(port: number): void{
+    this.express.listen(port)
+  }
 }

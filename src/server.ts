@@ -18,8 +18,8 @@ class App {
     this.express.use();
   }
 
-  listen(port: number): void {
-    this.express.listen(port);
+  listen(port: number, callback: () => void): void {
+    this.express.listen(port, callback);
   }
 }
 

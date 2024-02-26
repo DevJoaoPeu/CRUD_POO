@@ -1,4 +1,5 @@
 import express, { json } from "express";
+import userController from "./user/user.controller";
 
 class App {
   public express: express.Application;
@@ -15,7 +16,7 @@ class App {
   }
 
   routes() {
-    this.express.use();
+    this.express.use(userController.router);
   }
 
   listen(port: number, callback: () => void): void {

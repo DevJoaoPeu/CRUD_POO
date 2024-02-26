@@ -15,10 +15,12 @@ class App {
   }
 
   routes() {
-    this.express.use()
+    this.express.use();
   }
 
-  listen(port: number): void{
-    this.express.listen(port)
+  listen(port: number): void {
+    this.express.listen(port);
   }
 }
+
+export default new App();

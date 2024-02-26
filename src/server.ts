@@ -1,6 +1,6 @@
 import express, { json } from "express";
 
-class User {
+class App {
   public express: express.Application;
 
   constructor() {

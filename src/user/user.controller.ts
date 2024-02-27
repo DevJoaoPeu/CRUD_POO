@@ -1,16 +1,16 @@
 import { Router } from "express";
-import service from "./service";
+import userService from "./user.service";
 
 class userController{
-    router: Router;
+    router = Router()
 
    constructor(){
-    this.router = Router()
     this.initRoutes();
    }
 
    initRoutes(){
-    this.router.get("/", service.getTeste)
+    this.router.get("/", userService.getTeste)
+    this.router.post("/create", userService.create)
    }
 }
 

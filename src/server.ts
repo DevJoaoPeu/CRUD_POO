@@ -1,27 +1,12 @@
-import express, { json } from "express";
+import Express from "express";
 import userController from "./user/user.controller";
 
-class App {
-  public express: express.Application;
+const PORT = 3333
+const app = Express();
 
-  constructor() {
-    this.express = express();
+app.use(Express.json())
+app.use(userController.router);
 
-    this.middlewares();
-    this.routes();
-  }
-
-  middlewares() {
-    this.express.use(json());
-  }
-
-  routes() {
-    this.express.use(userController.router);
-  }
-
-  listen(port: number, callback: () => void): void {
-    this.express.listen(port, callback);
-  }
-}
-
-export default new App();
+app.listen(PORT, () => {
+    console.log(`Server is running on port: ${PORT}`)
+});
